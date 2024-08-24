@@ -2,19 +2,19 @@ import Image from "next/image";
 
 export default function ResumeSection() {
     return (
-        <div className="w-full max-h-xl max-w-2xl mx-auto py-8">
-            <div className="flex flex-col justify-center px-4 md:px-0">
-                <div className="flex py-4">
-                    <div>
-                        <h3 className="font-bold text-4xl py-2">Resume</h3>
-                        <p className="text-gray-400 uppercase text-xs w-full md:w-2/3">
+        <div className="w-full max-h-xl max-w-4xl mx-auto py-8">
+            <div className="px-4 md:px-0">
+                <div className="flex py-4 justify-between">
+                    <div className="flex flex-col justify-end">
+                        <h3 className="font-bold text-5xl py-2">Resume</h3>
+                        <p className="text-gray-400 uppercase md:text-base text-sm w-full md:w-2/3">
                             If you&apos;d like to learn more about my qualifications, please review my resume below.
                         </p>
                     </div>
                     <Image
                         src="/bitmoji_books.png"
-                        width={100}
-                        height={100}
+                        width={200}
+                        height={200}
                         className="hidden md:block"
                         alt="Jordan bitmoji with books"
                         />
