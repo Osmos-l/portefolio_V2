@@ -4,7 +4,6 @@ export default function HeroSection() {
     return (
         <div className="relative w-full text-center">
             <div className="relative w-full max-w-4xl mx-auto py-10">
-                <div className="absolute inset-0 spotlight animate-ping-slow"></div>
                 <div className="flex items-center">
                 <Image
                     src="/bitmoji_wall.png"
