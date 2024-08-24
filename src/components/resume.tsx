@@ -4,7 +4,7 @@ export default function ResumeSection() {
     return (
         <div className="w-full h-full max-h-xl max-w-2xl mx-auto py-8">
             <div className="grid md:grid-cols-2 gap-6 grid-cols-1">
-                <div className="hidden md:block">
+                <div>
                     <Image
                         src="/bitmoji_books.png"
                         width={800}
