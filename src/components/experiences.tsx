@@ -16,7 +16,10 @@ export default function ExperiencesSection() {
                         key={index}
                         className="relative h-full hover:scale-100 hover:-translate-y-1 transition ease-in-out delay-150 duration-300 scale-[.98]"
                     >
-                        <div className={`absolute inset-0 ${colorMap[experience.color]} rounded-md blur`}></div>
+                        <div 
+                            className={`absolute inset-0 ${colorMap[experience.color]} rounded-md blur animate-pulse-slow`}
+                            style={{ animationDelay: `${Math.random() * 2}s` }}
+                            ></div>
                         <div className="relative bg-custom rounded-xl border border-white border-opacity-10 p-4 transition-all h-full">
                             
                             <div className="relative">
