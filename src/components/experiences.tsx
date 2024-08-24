@@ -15,7 +15,7 @@ export default function ExperiencesSection() {
                     <a href={experience.website} 
                         target="_blank" 
                         key={index}
-                        className="relative h-full hover:scale-100 hover:-translate-y-1 transition ease-in-out delay-150 duration-300 scale-[.98]"
+                        className={`relative h-full hover:scale-100 hover:-translate-y-1 transition ease-in-out delay-150 duration-300 scale-[.98] ${experiences.length % 2 === 1 && experiences.length - 1 === index ? 'md:col-span-2' : ''}`}
                     >
                         <div 
                             className={`absolute inset-0 ${colorMap[experience.color]} rounded-md blur animate-pulse-slow`}
