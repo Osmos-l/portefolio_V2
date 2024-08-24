@@ -14,7 +14,7 @@ export default function HeroSection() {
                 />
                 </div>
                 <h1 className="text-center font-bold text-4xl">Software Engineer</h1>
-                <p className="text-center py-4 text-lg mx-auto max-w-xl">
+                <p className="text-center py-4 text-lg mx-auto max-w-xl px-4 sm:px-0">
                 Hi 👋, nice to meet you. My name is Jordan, I am a <b>Software Engineer</b> living in France 🇫🇷🥖🍷.
                 </p>
                 <a href="#" className="animate-bounce-slow mx-auto inline-block px-6 py-3 my-10 bg-emerald-600 text-white transition-all font-semibold rounded-lg shadow-md hover:bg-emerald-800 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">

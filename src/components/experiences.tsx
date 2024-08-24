@@ -8,7 +8,7 @@ export default function ExperiencesSection() {
       };
 
     return (
-        <div className="w-full max-w-6xl mx-auto">
+        <div className="w-full max-w-6xl mx-auto px-4 md:px-0">
             <div className="grid md:grid-cols-2 gap-6 grid-cols-1">
                 {experiences.map((experience: Experience, index: number) => (
                     <a href={experience.website} 
