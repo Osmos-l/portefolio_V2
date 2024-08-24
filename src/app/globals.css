@@ -8,6 +8,10 @@ body {
   color: white;
 }
 
+.bg-custom {
+  background-color: rgb(15, 24, 34);
+}
+
 .spotlight {
   background: radial-gradient(circle, rgba(255, 255, 255, 0.20) 0%, rgba(0, 0, 0, 0.7) 60%, rgba(0, 0, 0, 0.9) 100%);
   pointer-events: none;
