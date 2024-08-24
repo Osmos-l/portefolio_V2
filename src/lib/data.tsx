@@ -22,6 +22,13 @@ const experiences: Experience[] = [
         image: "/sagesse.png",
         skills: ["PHP", "Symfony", "JavaScript", "SQL"],
         color: "orange-700"
+    }, {
+        company: "Stedis",
+        position: "Web developer",
+        website: "https://www.stedis.com/",
+        image: "/stedis.png",
+        skills: ["Java", "Spring", "JavaScript", "Angular"],
+        color: "green-700"
     }
 ]
 

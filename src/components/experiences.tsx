@@ -5,6 +5,7 @@ export default function ExperiencesSection() {
     const colorMap: { [key: string]: string } = {
         "pink-700": "bg-pink-700",
         "orange-700": "bg-orange-700",
+        "green-700": "bg-green-700",
       };
 
     return (
@@ -34,7 +35,7 @@ export default function ExperiencesSection() {
                                 </div>
                                 <div className="py-4">
                                     <p className="text-gray-400 uppercase text-sm">{experience.company}</p>
-                                    <p className="relative text-2xl">{experience.position}</p>
+                                    <p className="relative text-2xl capitalize">{experience.position}</p>
                                 </div>
                                 <hr className="opacity-[.10]" />
                                 <div className="grid grid-cols-3 md:grid-cols-4 gap-4 pt-4">
