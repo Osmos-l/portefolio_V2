@@ -16,7 +16,7 @@ export default function ResumeSection() {
                     <div className="py-4">
                         <h3 className="text-center font-bold text-4xl py-2">Resume</h3>
                         <p className="text-gray-400 uppercase text-xs text-justify">
-                            If you'd like to learn more about my qualifications, please review my resume below.
+                            If you&apos;d like to learn more about my qualifications, please review my resume below.
                         </p>
                     </div>
                     <hr className="opacity-[.10]" />
