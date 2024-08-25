@@ -22,5 +22,5 @@ body {
 }
 
 .animate-pulse-slow {
-  animation: pulse-slow 2s infinite;
+  animation: pulse-slow 3s infinite;
 }

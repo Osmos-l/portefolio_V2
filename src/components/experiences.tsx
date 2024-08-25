@@ -10,12 +10,12 @@ export default function ExperiencesSection() {
 
     return (
         <div className="w-full max-w-6xl mx-auto px-4 md:px-0">
-            <div className="grid md:grid-cols-2 gap-6 grid-cols-1">
+            <div className="grid gap-6 grid-cols-2">
                 {experiences.map((experience: Experience, index: number) => (
                     <a href={experience.website} 
                         target="_blank" 
                         key={index}
-                        className={`relative h-full hover:scale-100 hover:-translate-y-1 transition ease-in-out delay-150 duration-300 scale-[.98] ${index === 0 ? 'md:col-span-2' : ''}`}
+                        className={`relative h-full hover:scale-100 hover:-translate-y-1 transition ease-in-out delay-150 duration-300 scale-[.98] ${index === 0 ? 'col-span-2' : ''}`}
                     >
                         <div 
                             className={`absolute inset-0 ${colorMap[experience.color]} rounded-md blur animate-pulse-slow`}
@@ -38,7 +38,7 @@ export default function ExperiencesSection() {
                                     <p className="relative text-2xl capitalize">{experience.position}</p>
                                 </div>
                                 <hr className="opacity-[.10]" />
-                                <div className="grid grid-cols-3 md:grid-cols-4 gap-4 pt-4">
+                                <div className="grid grid-cols-2 md:grid-cols-4 gap-4 pt-4">
                                     {
                                         experience.skills.map((skill: string, index: number) => (
                                             <span 
