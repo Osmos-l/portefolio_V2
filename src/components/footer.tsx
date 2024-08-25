@@ -1,4 +1,4 @@
-export default function Footer() {
+export default function Footer() {      
     return (
         <div className="w-full">
             <div className="w-full h-[1px] from-transparent via-white to-transparent bg-gradient-to-r opacity-[.25]"></div>
