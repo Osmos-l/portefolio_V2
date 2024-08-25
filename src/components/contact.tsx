@@ -5,7 +5,7 @@ export default function Contact() {
                 <h3 className="font-bold text-center text-5xl py-2">Open to New Opportunities 🚀</h3>
                 <hr className="opacity-[.10]" />
                 <p className="text-gray-400 md:text-base text-sm w-full text-justify py-2">
-                Feel free to reach out if you have new opportunities or ideas you'd like to discuss! I'm always open and eager to explore new possibilities.  😊.
+                Feel free to reach out if you have new opportunities or ideas you&apos;d like to discuss! I&apos;m always open and eager to explore new possibilities.  😊.
                 </p>
             </div>
             <div className="flex items-center justify-center gap-6 py-3">
