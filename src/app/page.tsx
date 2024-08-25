@@ -12,10 +12,10 @@ export default function Home() {
     <div className="overflow-x-hidden">
       <Navbar />
       <HeroSection />
+      <ContactSection />
       <ExperiencesSection />
       <ProjectsSection />
       <ResumeSection />
-      <ContactSection />
       <Footer />
     </div>
   );
