@@ -1,4 +1,6 @@
 import Image from "next/image";
+import FrenchFlag from "./svg/flags/fr";
+import UkFlag from "./svg/flags/uk";
 
 export default function ResumeSection() {
     return (
@@ -26,14 +28,20 @@ export default function ResumeSection() {
                         target="_blank"
                         className="transition-all inline-block bg-custom px-2 rounded-tl-lg rounded-bl-lg border-t border-l border-b border-white border-opacity-10 hover:border-opacity-100"
                     >
-                        🇬🇧
+                        <UkFlag
+                            width={75}
+                            height={75}
+                        />
                     </a>
                     <a
                         href="/resumes/cv.pdf"
                         target="_blank"
                         className="transition-all inline-block bg-custom px-2 rounded-tr-lg rounded-br-lg border-t border-r border-b border-white border-opacity-10 hover:border-opacity-100"
                     >
-                        🇫🇷
+                        <FrenchFlag
+                            width={75}
+                            height={75}
+                        />
                     </a>
                 </div>
             </div>
