@@ -5,6 +5,7 @@ import ResumeSection from "@/components/resume";
 import ProjectsSection from "@/components/projects";
 import Image from "next/image";
 import ContactSection from "@/components/contact";
+import Footer from "@/components/footer";
 
 export default function Home() {
   return (
@@ -15,6 +16,7 @@ export default function Home() {
       <ProjectsSection />
       <ResumeSection />
       <ContactSection />
+      <Footer />
     </div>
   );
 }
