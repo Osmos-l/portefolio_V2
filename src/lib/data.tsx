@@ -81,7 +81,7 @@ const projects: Project[] = [
         name: "Plugin - Clothes System",
         langages: "Lua (Garry's MOD)",
         image: "/projects/clothes_system.jpeg",
-        size: 1,
+        size: 2,
         codeSource: "https://github.com/Osmos-l/Clothes-System-V2-",
         demo: "https://steamcommunity.com/sharedfiles/filedetails/?id=1404310741"
     }
