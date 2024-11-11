@@ -35,7 +35,16 @@ export default function ExperiencesSection() {
                                 </div>
                                 <div className="py-4">
                                     <p className="text-gray-400 uppercase text-sm">{experience.company}</p>
-                                    <p className="relative text-2xl capitalize">{experience.position}</p>
+                                    { experience?.position && ( <p className="relative text-2xl capitalize">{experience.position}</p> ) }
+                                    {experience?.positions && experience.positions.length > 0 && (
+                                        <div>
+                                            {experience.positions.map((position, index) => (
+                                            <p key={index} className="relative text-2xl capitalize">
+                                                - {position}
+                                            </p>
+                                            ))}
+                                        </div>
+                                    )}
                                 </div>
                                 <hr className="opacity-[.10]" />
                                 <div className="grid grid-cols-3 md:grid-cols-4 gap-4 pt-4">

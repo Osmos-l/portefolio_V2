@@ -1,6 +1,7 @@
 export type Experience = {
     company: string,
-    position: string,
+    position: string | null,
+    positions: string[] | null,
     website: string,
     image: string,
     skills: string[],
@@ -18,8 +19,12 @@ export type Project = {
 
 const experiences: Experience[] = [
     {
-        company: "CGI (2021 - today)",
-        position: "Software Engineer",
+        company: "CGI",
+        position: null,
+        positions: [
+            "Lead Developer (2023 - now)",
+            "Software Engineer (2021 - 2023)"
+        ],
         website: "https://www.cgi.com",
         image: "/companies/cgi.webp",
         skills: ["Ruby", "Rails", "JavaScript", "SQL", "Docker", "Kubernetes", "Jenkins"],
@@ -27,6 +32,7 @@ const experiences: Experience[] = [
     }, {
         company: "Sagesse Assurance (2020 - 2021)",
         position: "Software Engineer",
+        positions: null,
         website: "https://www.sagesse.fr/",
         image: "/companies/sagesse.png",
         skills: ["PHP", "Symfony", "JavaScript", "SQL"],
@@ -34,6 +40,7 @@ const experiences: Experience[] = [
     }, {
         company: "Stedis (2019)",
         position: "Web developer",
+        positions: null,
         website: "https://www.stedis.com/",
         image: "/companies/stedis.png",
         skills: ["Java", "Spring", "JavaScript", "Angular"],
