@@ -1,6 +1,7 @@
 export default function Footer() {      
     return (
         <div className="w-full">
+            <br />
             <div className="w-full h-[1px] from-transparent via-white to-transparent bg-gradient-to-r opacity-[.25]"></div>
             <div className="mx-auto w-full max-w-7xl flex items-center justify-between py-6 px-12">
                 <div>
