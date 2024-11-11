@@ -4,7 +4,7 @@ export default function HeroSection() {
     return (
         <div className="relative w-full text-center">
             <div className="absolute inset-0 flex justify-center items-center backdrop-blur-xl overflow-hidden">
-                <div className="relative w-full p-[1px] opacity-[.25]">
+                <div className="relative w-full p-[1px] opacity-[.35]">
                     <Image
                         src="/nycv.jpeg"
                         width={5000}
