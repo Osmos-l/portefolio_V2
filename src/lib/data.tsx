@@ -22,7 +22,8 @@ const experiences: Experience[] = [
         company: "CGI",
         position: null,
         positions: [
-            "Lead Developer (2023 - now)",
+            "Technical expert (2025 - Now)",
+            "Lead Developer (2023 - 2025)",
             "Software Engineer (2021 - 2023)"
         ],
         website: "https://www.cgi.com",
@@ -50,6 +51,21 @@ const experiences: Experience[] = [
 
 const projects: Project[] = [
     {
+        name: "Deep Learning - MNIST",
+        langages: "Python",
+        image: "/projects/deep_learning_mnist.png",
+        size: 2,
+        codeSource: "https://github.com/Osmos-l/deep-learning-mnist",
+        demo: "https://github.com/Osmos-l/deep-learning-mnist"
+    },
+    {
+        name: "Machine Learning - Perceptron",
+        langages: "Python",
+        image: "/projects/machine_learning_perceptron.png",
+        size: 2,
+        codeSource: "https://github.com/Osmos-l/machine-learning-perceptron",
+        demo: "https://github.com/Osmos-l/machine-learning-perceptron"
+    }, {
         name: "Portefolio",
         langages: "React - NextJS",
         image: "/projects/portefolio.png",

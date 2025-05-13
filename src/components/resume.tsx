@@ -13,25 +13,15 @@ export default function ResumeSection() {
                 </div>
                 <hr className="opacity-[.10]" />
                 <p className="text-gray-400 md:text-base text-sm w-full text-justify py-2">
-                    If you&apos;d like to dive deeper into my qualifications and experience, feel free to explore my detailed resumes in both English and French.
+                    If you&apos;d like to dive deeper into my qualifications and experience, feel free to explore my detailed resume.
                 </p>
                 <div className="w-full mx-auto text-center py-4 text-7xl">
                     <a
                         href="/resumes/resume.pdf"
                         target="_blank"
-                        className="transition-all inline-block bg-custom px-2 rounded-tl-lg rounded-bl-lg border-t border-l border-b border-white border-opacity-10 hover:border-opacity-100"
+                        className="transition-all inline-block bg-custom px-2 rounded-lg border-t border-l border-r border-b border-white border-opacity-10 hover:border-opacity-100"
                     >
                         <UkFlag
-                            width={75}
-                            height={75}
-                        />
-                    </a>
-                    <a
-                        href="/resumes/cv.pdf"
-                        target="_blank"
-                        className="transition-all inline-block bg-custom px-2 rounded-tr-lg rounded-br-lg border-t border-r border-b border-white border-opacity-10 hover:border-opacity-100"
-                    >
-                        <FrenchFlag
                             width={75}
                             height={75}
                         />

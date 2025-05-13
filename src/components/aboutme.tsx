@@ -8,17 +8,16 @@ export default function AboutMe() {
                 <h3 className="font-bold text-5xl py-2">Who I Am</h3>
                 <hr className="opacity-[.10]" />
                 <p className="text-gray-400 md:text-base text-sm w-full text-justify py-2">
-                    🚀 <b className="text-gray-300">Software Engineer</b> with +4 years of experience, I began my coding journey by developing custom game servers on Garry&apos;s Mod using Lua, where I learned the importance of <b className="text-gray-300">creativity</b> and <b className="text-gray-300">problem-solving</b> in building something from scratch. 
-                    This passion for development grew into a deep specialization in back-end engineering.
+                    🚀 <b className="text-gray-300">Software Engineer with +5 years of experience</b>, my career began by developing custom game servers on Garry&apos;s Mod using Lua. This early exposure to coding taught me how to approach complex problems from unique angles, laying the foundation for my later work in <b className="text-gray-300">back-end engineering</b> and <b className="text-gray-300">AI</b>. 
                     <br />
                     <br />
-                    🌱 I thrive on designing and scaling complex systems. Currently, I&apos;m leading the development of a <b className="text-gray-300">web application for SNCF</b>, managing incident and accident feedback for thousands of daily users. This project is critical for improving safety and operations within the company.
+                    💡 With a deep interest in artificial intelligence, I’ve advanced my expertise in <b className="text-gray-300">machine learning</b> and <b className="text-gray-300">deep learning</b> models. Today, I lead the development of <b className="text-gray-300">web applications for SNCF</b>, responsible for managing critical incident and accident data, used by thousands of employees daily. This <b className="text-gray-300">high-scale</b> project focuses on enhancing operational efficiency and safety, using cutting-edge technologies to improve real-world processes.
                     <br />
                     <br />
-                    💼 My professional experience also includes working on applications for industry giants like <b className="text-gray-300">Thales</b> and <b className="text-gray-300">Total Energies</b>, where I gained invaluable experience in building scalable, secure, and high-performance solutions.
+                    🌐 I’ve also worked with industry leaders like  <b className="text-gray-300">Thales</b> and <b className="text-gray-300">TotalEnergies</b>, where I contributed to building <b className="text-gray-300">secure, scalable, and high-performance systems</b>. My experience with these global players has given me a strong grasp of developing solutions that can scale and adapt to ever-evolving needs.
                     <br />
                     <br />
-                    🚀 Constantly eager to grow, I am always excited to learn new technologies and improve my skills to build innovative and impactful solutions.
+                    ⚡️ <b className="text-gray-300">Passionate about AI and innovation</b>, I continuously seek new technologies and methodologies to solve complex challenges. My goal is to build <b className="text-gray-300">intelligent, efficient systems</b> that drive meaningful change, and I’m always pushing myself to stay ahead of the curve in this rapidly evolving field.
                 </p>
             </div>
         </div>
