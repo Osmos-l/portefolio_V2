@@ -17,6 +17,13 @@ export type Project = {
     demo: string,
 }
 
+export type Book = {
+    name: string,
+    authors: string,
+    image: string,
+    url: string
+}
+
 const experiences: Experience[] = [
     {
         company: "CGI",
@@ -109,5 +116,31 @@ const projects: Project[] = [
         demo: "https://steamcommunity.com/sharedfiles/filedetails/?id=1404310741"
     }
 ]
+const books: Book[] = [
+    {
+        name: "Deep learning",
+        authors: "Ian Goodfellow, Yoshua Bengion, Aaron Courville",
+        image: "/books/deep_learning.jpg",
+        url: ""
+    },
+    {
+        name: "Code Source",
+        authors: "Bill Gates",
+        image: "/books/code_source.jpg",
+        url: ""
+    },
+    {
+        name: "Quand la machine apprend",
+        authors: "Yann LeCunn",
+        image: "/books/quand_la_machine_apprend.jpg",
+        url: ""
+    },
+    {
+        name: "L'assasin Royal - 1",
+        authors: "Robin Hoob",
+        image: "/books/assassin_royal_tome_un.jpg",
+        url: ""
+    }
+]
 
-export { experiences, projects }
+export { experiences, projects, books }

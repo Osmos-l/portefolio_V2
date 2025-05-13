@@ -7,6 +7,7 @@ import Image from "next/image";
 import AboutMe from "@/components/aboutme";
 import Footer from "@/components/footer";
 import ContactSection from "@/components/contact";
+import BooksSection from "@/components/books";
 
 export default function Home() {
   return (
@@ -17,6 +18,7 @@ export default function Home() {
       <ResumeSection />
       <ExperiencesSection />
       <ProjectsSection />
+      <BooksSection />
       <Footer />
     </div>
   );
