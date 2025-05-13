@@ -25,7 +25,7 @@ export default function BooksSection() {
                                 <div className="w-full h-[350px] flex items-center justify-center overflow-hidden rounded-md">
                                     <Image
                                         src={book.image}
-                                        alt={`Logo of ${book.name} project`}
+                                        alt={`Logo of ${book.name} book`}
                                         width={400}
                                         height={400}
                                         className="object-contain"
