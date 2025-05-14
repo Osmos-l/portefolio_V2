@@ -7,7 +7,7 @@ export default function Footer() {
                 <div>
                     <a className="text-white" href="https://jordanlcq.vercel.app/">jordanlcq.vercel</a>
                     <p className="text-gray-400">
-                        ©  Jordan 2025. All rights reserverd.
+                        ©  Jordan 2025. All rights reserved.
                     </p>
                 </div>
                 <a href="mailto:jordan.lcq1@gmail.com" className="text-white">
