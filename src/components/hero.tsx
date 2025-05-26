@@ -26,12 +26,12 @@ export default function HeroSection() {
                 </div>
                 <h1 className="text-center font-bold text-4xl">Software Engineer</h1>
                 <p className="text-center pt-4 text-lg mx-auto max-w-xl">
-                Hi 👋, I’m Jordan, a Software Engineer specializing in <b>web development</b> and <b>scalable</b> projects, based in France 🇫🇷.<br />
+                Hi 👋 I&apos;m Jordan — a <b>software engineer</b> passionate about <b>web technologies</b> and <b>AI-driven solutions</b>, based in France 🇫🇷.
                 </p>
-                <p className="text-center text-small mx-auto max-w-xl text-gray-400">
-                I’m currently exploring opportunities in the US.
+                <p className="text-center text-sm mx-auto max-w-xl text-gray-400">
+                I&apos;m actively exploring opportunities in the US, whether for a job or to join a graduate program.
                 </p>
-                <div className="flex flex-col gap-4 pt-8 justify-center items-center">
+                <div className="flex flex-row gap-4 pt-8 justify-center items-center">
                     <a
                         href="mailto:jordan.lcq1@gmail.com"
                         className="group relative mx-auto inline-flex items-center px-8 py-3 bg-gradient-to-r from-emerald-500 to-emerald-700 text-white font-semibold rounded-full shadow-lg transition-all duration-300 hover:scale-105 hover:from-emerald-600 hover:to-emerald-800 focus:outline-none focus:ring-2 focus:ring-emerald-400"
@@ -40,7 +40,7 @@ export default function HeroSection() {
                         <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
                             <path d="M2.01 6.51A2 2 0 0 1 4 5h16a2 2 0 0 1 1.99 1.51l-9.99 6.24-9.99-6.24zM2 8.76V19a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8.76l-9.34 5.83a1 1 0 0 1-1.32 0L2 8.76z"/>
                         </svg>
-                        Let&apos;s connect!
+                        Let&apos;s talk!
                         <span className="absolute right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">→</span>
                     </a>
                     <a

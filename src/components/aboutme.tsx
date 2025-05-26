@@ -8,17 +8,24 @@ export default function AboutMe() {
                 <h3 className="font-bold text-5xl py-2">Who I Am</h3>
                 <hr className="opacity-[.10]" />
                 <p className="text-gray-400 md:text-base text-sm w-full text-justify py-2">
-                    🚀 <b className="text-gray-300">Software Engineer with +5 years of experience</b>, my career began by developing custom game servers on Garry&apos;s Mod using Lua. This early exposure to coding taught me how to approach complex problems from unique angles, laying the foundation for my later work in <b className="text-gray-300">back-end engineering</b> and <b className="text-gray-300">AI</b>. 
+                    🚀 <b className="text-gray-300">Software engineer with over 5 years of experience</b>, I started my journey building custom game servers on Garry&apos;s Mod using Lua. That early tinkering spirit taught me to dive deep, experiment fearlessly, and turn ideas into working systems — a mindset that still drives me today in <b className="text-gray-300">back-end engineering</b> and <b className="text-gray-300">AI</b>.
                     <br />
                     <br />
-                    💡 With a deep interest in artificial intelligence, I’ve advanced my expertise in <b className="text-gray-300">machine learning</b> and <b className="text-gray-300">deep learning</b> models. Today, I lead the development of <b className="text-gray-300">web applications for SNCF</b>, responsible for managing critical incident and accident data, used by thousands of employees daily. This <b className="text-gray-300">high-scale</b> project focuses on enhancing operational efficiency and safety, using cutting-edge technologies to improve real-world processes.
+                    💡 My passion for artificial intelligence has led me to train <b className="text-gray-300">neural networks from scratch</b>, explore <b className="text-gray-300">deep learning architectures</b>, and apply ML to real-world use cases. I love bridging the gap between theory and practice — whether it’s a model running in production or just a paper turned into code.
                     <br />
                     <br />
-                    🌐 I’ve also worked with industry leaders like  <b className="text-gray-300">Thales</b> and <b className="text-gray-300">TotalEnergies</b>, where I contributed to building <b className="text-gray-300">secure, scalable, and high-performance systems</b>. My experience with these global players has given me a strong grasp of developing solutions that can scale and adapt to ever-evolving needs.
+                    🏗️ Today, I lead the development of <b className="text-gray-300">critical web platforms at SNCF</b>, helping manage incident and accident data across the organization. These tools are used daily by thousands of employees and play a key role in improving safety and operations — high-impact, high-responsibility work that I take to heart.
                     <br />
                     <br />
-                    ⚡️ <b className="text-gray-300">Passionate about AI and innovation</b>, I continuously seek new technologies and methodologies to solve complex challenges. My goal is to build <b className="text-gray-300">intelligent, efficient systems</b> that drive meaningful change, and I’m always pushing myself to stay ahead of the curve in this rapidly evolving field.
+                    🌐 I’ve also contributed to large-scale systems at <b className="text-gray-300">Thales</b> and <b className="text-gray-300">TotalEnergies</b>, where I helped build <b className="text-gray-300">secure, scalable solutions</b> used in demanding industrial contexts. These experiences sharpened my ability to adapt, deliver, and keep a clear focus under pressure.
+                    <br />
+                    <br />
+                    👤 Beyond the code, I’m a curious mind who loves learning how things work — and making them better. Whether I’m optimizing a SQL query, or prototyping a CNN on CIFAR-10, I thrive on solving real problems with elegant, thoughtful solutions.
+                    <br />
+                    <br />
+                    ⚡️ I’m driven by a simple goal: to build <b className="text-gray-300">intelligent, efficient systems</b> that actually help people. I stay close to the latest tools, and far from hype. If there’s something new to learn or create, you’ll probably find me in the middle of it.
                 </p>
+
             </div>
         </div>
     )
