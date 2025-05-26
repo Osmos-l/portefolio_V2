@@ -18,6 +18,7 @@ export default function ResumeSection() {
                 <div className="w-full mx-auto text-center py-4 text-7xl">
                     <a
                         href="/resumes/resume.pdf"
+                        download="jordan_leclercq_resume.pdf"
                         target="_blank"
                         className="transition-all inline-block bg-custom px-2 rounded-lg border-t border-l border-r border-b border-white border-opacity-10 hover:border-opacity-100"
                     >
