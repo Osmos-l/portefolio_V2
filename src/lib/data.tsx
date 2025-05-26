@@ -58,6 +58,14 @@ const experiences: Experience[] = [
 
 const projects: Project[] = [
     {
+        name: "DeepVision - CIFAR",
+        langages: "Python",
+        image: "/projects/deep_vision_cifar.png",
+        size: 2,
+        codeSource: "https://github.com/Osmos-l/DeepVision-CIFAR",
+        demo: "https://github.com/Osmos-l/DeepVision-CIFAR"
+    },
+    {
         name: "Deep Learning - MNIST",
         langages: "Python",
         image: "/projects/deep_learning_mnist.png",
@@ -69,7 +77,7 @@ const projects: Project[] = [
         name: "Machine Learning - Perceptron",
         langages: "Python",
         image: "/projects/machine_learning_perceptron.png",
-        size: 2,
+        size: 1,
         codeSource: "https://github.com/Osmos-l/machine-learning-perceptron",
         demo: "https://github.com/Osmos-l/machine-learning-perceptron"
     }, {
