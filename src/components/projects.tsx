@@ -5,9 +5,7 @@ import Image from "next/image"
 import GithubMark from "@/components/svg/github";
 import InternetMark from "@/components/svg/internet";
 import { useState } from "react";
-
-// Import des modals
-import MnistDemoModal from "@/components/modals/mnistdemomodal";
+import MnistDemoModal from "@/components/modals/mnistDemoModal";
 
 const modalComponents: { [key: string]: React.ComponentType<{ isOpen: boolean; onClose: () => void; project: Project }> } = {
   MnistDemoModal,
