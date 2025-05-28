@@ -1,13 +1,39 @@
+"use client";
+
 import { projects, Project } from "@/lib/data"
 import Image from "next/image"
 import GithubMark from "@/components/svg/github";
 import InternetMark from "@/components/svg/internet";
+import { useState } from "react";
+
+// Import des modals
+import MnistDemoModal from "@/components/modals/mnistdemomodal";
+
+const modalComponents: { [key: string]: React.ComponentType<{ isOpen: boolean; onClose: () => void; project: Project }> } = {
+  MnistDemoModal,
+};
 
 export default function ProjectsSection() {
+    const [selectedProject, setSelectedProject] = useState<Project | null>(null)
+    
     const sizeMap: { [key: string]: string } = {
         1: "col-span-1",
         2: "md:col-span-2"
       };
+
+    const openModalForProject = (project: Project) => {
+        setSelectedProject(project);
+    };
+
+    const closeModal = () => {
+        setSelectedProject(null);
+    };
+
+    // Choisir dynamiquement le composant modal
+    const SelectedModal =
+        selectedProject && selectedProject.modal
+            ? modalComponents[selectedProject.modal]
+            : null;
 
     return (
         <div className="w-full max-w-6xl mx-auto px-4 md:px-0">
@@ -55,7 +81,8 @@ export default function ProjectsSection() {
                                         </span>
                                         
                                     </a>
-                                    <a 
+                                    {project.demo && (
+                                        <a 
                                         className="text-gray-400 hover:text-gray-200 flex items-center gap-2
                                                     fill-gray-500 hover:fill-white 
                                                     transition-colors duration-300"
@@ -67,12 +94,22 @@ export default function ProjectsSection() {
                                             Demo
                                         </span>
                                         
-                                    </a>
+                                    </a>) }
+                                    {project.modal && (
+                                       <button
+                                    onClick={() => openModalForProject(project)}
+                                    className="mt-2 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
+                                    >
+                                    Ouvrir démo IA
+                                    </button>) }
                                 </div>
                             </div>
                         </div>
                     </div>
                 ))}
+                {SelectedModal && selectedProject && (
+                    <SelectedModal isOpen={true} onClose={closeModal} project={selectedProject} />
+                )}
             </div>
         </div>
     )

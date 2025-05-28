@@ -14,7 +14,8 @@ export type Project = {
     image: string,
     size: number,
     codeSource: string,
-    demo: string,
+    demo?: string,
+    modal?: string,
 }
 
 export type Book = {
@@ -62,8 +63,7 @@ const projects: Project[] = [
         langages: "Python",
         image: "/projects/deep_vision_cifar.png",
         size: 2,
-        codeSource: "https://github.com/Osmos-l/DeepVision-CIFAR",
-        demo: "https://github.com/Osmos-l/DeepVision-CIFAR"
+        codeSource: "https://github.com/Osmos-l/DeepVision-CIFAR"
     },
     {
         name: "Deep Learning - MNIST",
@@ -71,7 +71,7 @@ const projects: Project[] = [
         image: "/projects/deep_learning_mnist.png",
         size: 2,
         codeSource: "https://github.com/Osmos-l/deep-learning-mnist",
-        demo: "https://github.com/Osmos-l/deep-learning-mnist"
+        modal: "MnistDemoModal"
     },
     {
         name: "Machine Learning - Perceptron",
