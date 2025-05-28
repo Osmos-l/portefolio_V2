@@ -15,6 +15,8 @@ export default function MnistDemoModal({
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const [prediction, setPrediction] = useState<number | null>(null);
 
+  const [isDrawing, setIsDrawing] = useState(false);
+
   // Efface le canvas
   const clearCanvas = () => {
     const ctx = canvasRef.current?.getContext('2d');
@@ -25,15 +27,47 @@ export default function MnistDemoModal({
     }
   };
 
-  // Dessine un pixel blanc sur la grille 28x28
-  const handleMouseDraw = (e: React.MouseEvent<HTMLCanvasElement>) => {
-    if (e.buttons !== 1) return;
+  // Fonction utilitaire pour obtenir la position (souris ou tactile)
+  const getCanvasPos = (clientX: number, clientY: number) => {
     const canvas = canvasRef.current;
-    if (!canvas) return;
+    if (!canvas) return { x: 0, y: 0 };
     const rect = canvas.getBoundingClientRect();
-    const x = Math.floor(((e.clientX - rect.left) / rect.width) * GRID_SIZE);
-    const y = Math.floor(((e.clientY - rect.top) / rect.height) * GRID_SIZE);
-    const ctx = canvas.getContext('2d');
+    const x = Math.floor(((clientX - rect.left) / rect.width) * GRID_SIZE);
+    const y = Math.floor(((clientY - rect.top) / rect.height) * GRID_SIZE);
+    return { x, y };
+  };
+
+  // Souris
+  const handleMouseDown = (e: React.MouseEvent<HTMLCanvasElement>) => {
+    setIsDrawing(true);
+    const { x, y } = getCanvasPos(e.clientX, e.clientY);
+    drawPixel(x, y);
+  };
+  const handleMouseUp = () => setIsDrawing(false);
+  const handleMouseMove = (e: React.MouseEvent<HTMLCanvasElement>) => {
+    if (!isDrawing) return;
+    const { x, y } = getCanvasPos(e.clientX, e.clientY);
+    drawPixel(x, y);
+  };
+
+  // Tactile
+  const handleTouchStart = (e: React.TouchEvent<HTMLCanvasElement>) => {
+    setIsDrawing(true);
+    const touch = e.touches[0];
+    const { x, y } = getCanvasPos(touch.clientX, touch.clientY);
+    drawPixel(x, y);
+  };
+  const handleTouchMove = (e: React.TouchEvent<HTMLCanvasElement>) => {
+    if (!isDrawing) return;
+    const touch = e.touches[0];
+    const { x, y } = getCanvasPos(touch.clientX, touch.clientY);
+    drawPixel(x, y);
+  };
+  const handleTouchEnd = () => setIsDrawing(false);
+
+  // Fonction pour dessiner un pixel
+  const drawPixel = (x: number, y: number) => {
+    const ctx = canvasRef.current?.getContext('2d');
     if (ctx) {
       ctx.fillStyle = 'white';
       ctx.fillRect(x, y, 1, 1);
@@ -87,7 +121,13 @@ export default function MnistDemoModal({
           ref={canvasRef}
           width={GRID_SIZE}
           height={GRID_SIZE}
-          onMouseMove={handleMouseDraw}
+          onMouseDown={handleMouseDown}
+          onMouseUp={handleMouseUp}
+          onMouseLeave={handleMouseUp}
+          onMouseMove={handleMouseMove}
+          onTouchStart={handleTouchStart}
+          onTouchMove={handleTouchMove}
+          onTouchEnd={handleTouchEnd}
           style={{
             width: DISPLAY_SIZE,
             height: DISPLAY_SIZE,
@@ -97,6 +137,7 @@ export default function MnistDemoModal({
             marginBottom: '1rem',
             cursor: 'crosshair',
             display: 'block',
+            touchAction: 'none', // important pour éviter le scroll sur mobile
           }}
         />
         <div className="flex gap-2 mb-4">
