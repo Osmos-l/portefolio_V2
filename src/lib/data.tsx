@@ -79,7 +79,6 @@ const projects: Project[] = [
         image: "/projects/machine_learning_perceptron.png",
         size: 1,
         codeSource: "https://github.com/Osmos-l/machine-learning-perceptron",
-        demo: "https://github.com/Osmos-l/machine-learning-perceptron"
     }, {
         name: "Portefolio",
         langages: "React - NextJS",
@@ -100,14 +99,12 @@ const projects: Project[] = [
         image: "/projects/aoc.png",
         size: 1,
         codeSource: "https://github.com/Osmos-l/AdventOfCode",
-        demo: "https://github.com/Osmos-l/AdventOfCode"
     }, {
         name: "Sieve Erathostene Benchmark",
         langages: "Java",
         image: "/projects/sieve_erathostene.webp",
         size: 1,
         codeSource: "https://github.com/Osmos-l/sieveErathostene",
-        demo: "https://github.com/Osmos-l/sieveErathostene"
     }, {
         name: "Simon game",
         langages: "Javascript",
