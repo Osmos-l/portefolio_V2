@@ -63,7 +63,8 @@ const projects: Project[] = [
         langages: "Python",
         image: "/projects/deep_vision_cifar.png",
         size: 2,
-        codeSource: "https://github.com/Osmos-l/DeepVision-CIFAR"
+        codeSource: "https://github.com/Osmos-l/DeepVision-CIFAR",
+        modal: "CifarDemoModal"
     },
     {
         name: "Deep Learning - MNIST",

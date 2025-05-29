@@ -167,7 +167,7 @@ export default function MnistDemoModal({
 
     const input = getCenteredImageData();
     try {
-      const res = await fetch(`${API_URL}/predict`, {
+      const res = await fetch(`${API_URL}/mnist/mlp/predict`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ input }),

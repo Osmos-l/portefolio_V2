@@ -6,9 +6,11 @@ import GithubMark from "@/components/svg/github";
 import InternetMark from "@/components/svg/internet";
 import { useState } from "react";
 import MnistDemoModal from "@/components/modals/mnistDemoModal";
+import CifarDemoModal from "@/components/modals/cifarDemoModal";
 
 const modalComponents: { [key: string]: React.ComponentType<{ isOpen: boolean; onClose: () => void; project: Project }> } = {
   MnistDemoModal,
+  CifarDemoModal
 };
 
 export default function ProjectsSection() {
