@@ -17,6 +17,8 @@ export default function MnistDemoModal({
   const [top3, setTop3] = useState<{ class: number; probability: number }[] | null>(null);
 
   const [isDrawing, setIsDrawing] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [serverStarting, setServerStarting] = useState(false);
 
   // Efface le canvas
   const clearCanvas = () => {
@@ -160,16 +162,29 @@ export default function MnistDemoModal({
 
   const handlePredict = async () => {
     const API_URL = process.env.NEXT_PUBLIC_API_URL;
+    setLoading(true);
+    setServerStarting(false);
 
     const input = getCenteredImageData();
-    const res = await fetch(`${API_URL}/predict`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ input }),
-    });
-    const data = await res.json();
-    setPrediction(data.prediction ?? null);
-    setTop3(data.top3 ?? null);
+    try {
+      const res = await fetch(`${API_URL}/predict`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ input }),
+      });
+
+      if (!res.ok) throw new Error('Erreur serveur');
+
+      const data = await res.json();
+      setPrediction(data.prediction ?? null);
+      setTop3(data.top3 ?? null);
+    } catch (err) {
+      setServerStarting(true);
+      setPrediction(null);
+      setTop3(null);
+    } finally {
+      setLoading(false);
+    }
   };
 
   React.useEffect(() => {
@@ -241,6 +256,26 @@ export default function MnistDemoModal({
                 Fermer
               </button>
             </div>
+            {loading && (
+              <div className="flex items-center gap-2 my-4">
+                <svg className="animate-spin h-5 w-5 text-blue-600" viewBox="0 0 24 24">
+                  <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" fill="none"/>
+                  <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"/>
+                </svg>
+                <span className="text-blue-600 text-sm">Prédiction en cours...</span>
+              </div>
+            )}
+            {serverStarting && (
+              <div className="flex items-center gap-2 my-4">
+                <svg className="animate-spin h-5 w-5 text-orange-500" viewBox="0 0 24 24">
+                  <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" fill="none"/>
+                  <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"/>
+                </svg>
+                <span className="text-orange-500 text-sm">
+                  Le serveur démarre, cela peut prendre quelques secondes...
+                </span>
+              </div>
+            )}
             {prediction !== null && (
               <div className="mt-2">
                 {top3 && (
