@@ -191,6 +191,10 @@ export default function MnistDemoModal({
         <h2 className="text-xl font-bold mb-4">🎨 Dessine un chiffre (0-9)</h2>
         <p className="text-sm text-gray-400 mb-2">
           ℹ️ Le serveur peut prendre quelques secondes à se lancer s&apos;il était en veille.
+            <ul className="w-100 text-xs text-gray-400 mb-4 list-disc list-inside">
+            <li>✏️ Écris ton chiffre le plus gros possible dans la zone noire.</li>
+            <li>🟩 Évite de coller le chiffre aux bords, centre-le bien.</li>
+          </ul>
         </p>
         <div className="flex flex-col md:flex-row gap-4 items-start">
           <canvas
@@ -266,13 +270,6 @@ export default function MnistDemoModal({
             )}
           </div>
         </div>
-        <ul className="w-100 text-xs text-gray-400 mb-4 list-disc list-inside">
-          <li>✏️ Écris ton chiffre le plus gros possible dans la zone noire.</li>
-          <li>📱 Sur mobile, utilise ton doigt pour un style manuscrit proche de MNIST.</li>
-          <li>🖱️ Sur ordinateur, dessine lentement pour épaissir le trait.</li>
-          <li>🟩 Évite de coller le chiffre aux bords, centre-le bien.</li>
-          <li>🔄 Si le résultat est mauvais, efface et réessaie : le centrage et l’épaisseur du trait sont importants !</li>
-        </ul>
       </div>
     </div>
   );
