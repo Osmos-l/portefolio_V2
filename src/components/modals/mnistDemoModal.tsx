@@ -203,13 +203,11 @@ export default function MnistDemoModal({
         onClick={(e) => e.stopPropagation()}
         className="bg-gray rounded-lg p-6 max-w-md w-full shadow-lg"
       >
-        <h2 className="text-xl font-bold mb-4">🎨 Dessine un chiffre (0-9)</h2>
+        <h2 className="text-xl font-bold mb-4">🎨 Draw a digit (0-9)</h2>
         <p className="text-sm text-gray-400 mb-2">
-          ℹ️ Le serveur peut prendre quelques secondes à se lancer s&apos;il était en veille.
-            <ul className="w-100 text-xs text-gray-400 mb-4 list-disc list-inside">
-            <li>✏️ Écris ton chiffre le plus gros possible dans la zone noire.</li>
-            <li>🟩 Évite de coller le chiffre aux bords, centre-le bien.</li>
-          </ul>
+          ℹ️ The server may take a few seconds to start if it was asleep.<br />
+          ✏️ Write your digit as large as possible in the black area.<br />
+          🟩 Avoid touching the edges, center your digit.
         </p>
         <div className="flex flex-col md:flex-row gap-4 items-start">
           <canvas
@@ -241,19 +239,19 @@ export default function MnistDemoModal({
                 onClick={clearCanvas}
                 className="px-4 py-2 bg-gray-300 rounded hover:bg-gray-400"
               >
-                Effacer
+                Clear
               </button>
               <button
                 onClick={handlePredict}
                 className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
               >
-                Prédire
+                Predict
               </button>
               <button
                 onClick={onClose}
                 className="px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600 ml-auto"
               >
-                Fermer
+                Close
               </button>
             </div>
             {loading && (
@@ -262,7 +260,7 @@ export default function MnistDemoModal({
                   <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" fill="none"/>
                   <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"/>
                 </svg>
-                <span className="text-blue-600 text-sm">Prédiction en cours...</span>
+                <span className="text-blue-600 text-sm">Predicting...</span>
               </div>
             )}
             {serverStarting && (
@@ -272,7 +270,7 @@ export default function MnistDemoModal({
                   <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"/>
                 </svg>
                 <span className="text-orange-500 text-sm">
-                  Le serveur démarre, cela peut prendre quelques secondes...
+                  The server is starting, this may take a few seconds...
                 </span>
               </div>
             )}
@@ -280,7 +278,7 @@ export default function MnistDemoModal({
               <div className="mt-2">
                 {top3 && (
                   <p className="text-lg font-semibold mb-2">
-                    🧠 Prédiction : {prediction}
+                    🧠 Prediction: {prediction}
                     <span className="ml-2 text-gray-400">
                       ({(top3[0]?.probability * 100).toFixed(1)}%)
                     </span>
@@ -288,7 +286,7 @@ export default function MnistDemoModal({
                 )}
                 {top3 && (
                   <div>
-                    <p className="text-base font-medium mb-1">Top 3 :</p>
+                    <p className="text-base font-medium mb-1">Top 3:</p>
                     <ul className="text-sm">
                       {top3.map((item, idx) => (
                         <li key={idx}>
