@@ -19,6 +19,7 @@ export default function MnistDemoModal({
   const [isDrawing, setIsDrawing] = useState(false);
   const [loading, setLoading] = useState(false);
   const [serverStarting, setServerStarting] = useState(false);
+  const timerRef = useRef<NodeJS.Timeout | null>(null);
 
   // Efface le canvas
   const clearCanvas = () => {
@@ -165,6 +166,12 @@ export default function MnistDemoModal({
     setLoading(true);
     setServerStarting(false);
 
+    // Timer pour détecter un cold start (>5s)
+    if (timerRef.current) clearTimeout(timerRef.current);
+    timerRef.current = setTimeout(() => {
+      setServerStarting(true);
+    }, 5000);
+
     const input = getCenteredImageData();
     try {
       const res = await fetch(`${API_URL}/mnist/mlp/predict`, {
@@ -173,7 +180,7 @@ export default function MnistDemoModal({
         body: JSON.stringify({ input }),
       });
 
-      if (!res.ok) throw new Error('Erreur serveur');
+      if (!res.ok) throw new Error('Server error');
 
       const data = await res.json();
       setPrediction(data.prediction ?? null);
@@ -184,6 +191,8 @@ export default function MnistDemoModal({
       setTop3(null);
     } finally {
       setLoading(false);
+      setTimeout(() => setServerStarting(false), 2000);
+      if (timerRef.current) clearTimeout(timerRef.current);
     }
   };
 
@@ -205,7 +214,6 @@ export default function MnistDemoModal({
       >
         <h2 className="text-xl font-bold mb-4">🎨 Draw a digit (0-9)</h2>
         <p className="text-sm text-gray-400 mb-2">
-          ℹ️ The server may take a few seconds to start if it was asleep.<br />
           ✏️ Write your digit as large as possible in the black area.<br />
           🟩 Avoid touching the edges, center your digit.
         </p>
@@ -270,7 +278,7 @@ export default function MnistDemoModal({
                   <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"/>
                 </svg>
                 <span className="text-orange-500 text-sm">
-                  The server is starting, this may take a few seconds...
+                  The server was asleep and is starting up. This may take a few more seconds...
                 </span>
               </div>
             )}

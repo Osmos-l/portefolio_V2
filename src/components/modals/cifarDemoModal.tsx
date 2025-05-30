@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 
 const CIFAR_IMAGE_COUNT = 30; // number of images in public/demo/cifar
 
@@ -15,6 +15,8 @@ export default function CifarDemoModal({
   const [prediction, setPrediction] = useState<string>("");
   const [top3, setTop3] = useState<{ class: string; probability: number }[] | null>(null);
   const [loading, setLoading] = useState(false);
+  const [serverStarting, setServerStarting] = useState(false);
+  const timerRef = useRef<NodeJS.Timeout | null>(null);
 
   // On open, pick a random image
   useEffect(() => {
@@ -61,8 +63,14 @@ export default function CifarDemoModal({
   const handlePredict = async () => {
     const API_URL = process.env.NEXT_PUBLIC_API_URL;
     setLoading(true);
+    setServerStarting(false);
     setPrediction("Predicting...");
     setTop3(null);
+
+    // Timer to detect server cold start (>5s)
+    timerRef.current = setTimeout(() => {
+      setServerStarting(true);
+    }, 5000);
 
     try {
       const input = await getImagePixels();
@@ -83,6 +91,8 @@ export default function CifarDemoModal({
       console.error(error);
     } finally {
       setLoading(false);
+      setServerStarting(false);
+      if (timerRef.current) clearTimeout(timerRef.current);
     }
   };
 
@@ -121,12 +131,19 @@ export default function CifarDemoModal({
           </button>
         </div>
         {loading && (
-          <div className="flex items-center gap-2 my-2">
-            <svg className="animate-spin h-5 w-5 text-blue-600" viewBox="0 0 24 24">
-              <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" fill="none"/>
-              <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"/>
-            </svg>
-            <span className="text-blue-600 text-sm">Predicting...</span>
+          <div className="flex flex-col items-center gap-2 my-2">
+            <div className="flex items-center gap-2">
+              <svg className="animate-spin h-5 w-5 text-blue-600" viewBox="0 0 24 24">
+                <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" fill="none"/>
+                <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"/>
+              </svg>
+              <span className="text-blue-600 text-sm">Predicting...</span>
+            </div>
+            {serverStarting && (
+              <span className="text-orange-400 text-xs mt-2 text-center">
+                The server was asleep and is starting up. This may take a few more seconds...
+              </span>
+            )}
           </div>
         )}
         {prediction && !loading && (
