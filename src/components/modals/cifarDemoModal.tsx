@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 
-const CIFAR_IMAGE_COUNT = 30; // number of images in public/demo/cifar
+const CIFAR_IMAGE_COUNT = 20; // number of images in public/demo/cifar
 
 export default function CifarDemoModal({
   isOpen,
