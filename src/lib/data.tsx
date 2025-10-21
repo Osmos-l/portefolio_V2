@@ -63,7 +63,7 @@ const projects: Project[] = [
         langages: "React - Ruby On Rails",
         image: "/projects/help_me_invest.png",
         size: 4,
-        demo: "https://help-me-invest-tjtc-62e728ixt-jordan-leclercqs-projects.vercel.app/",
+        demo: "https://help-me-invest-tjtc.vercel.app/",
     },
     {
         name: "DeepVision - CIFAR",
