@@ -13,7 +13,7 @@ export type Project = {
     langages: string,
     image: string,
     size: number,
-    codeSource: string,
+    codeSource?: string,
     demo?: string,
     modal?: string,
 }
@@ -58,6 +58,13 @@ const experiences: Experience[] = [
 ]
 
 const projects: Project[] = [
+    {
+        name: "FinTech - helpMeInvest",
+        langages: "React - Ruby On Rails",
+        image: "/projects/help_me_invest.png",
+        size: 4,
+        demo: "https://help-me-invest-tjtc-62e728ixt-jordan-leclercqs-projects.vercel.app/",
+    },
     {
         name: "DeepVision - CIFAR",
         langages: "Python",

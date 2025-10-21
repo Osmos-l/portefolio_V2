@@ -18,7 +18,8 @@ export default function ProjectsSection() {
     
     const sizeMap: { [key: string]: string } = {
         1: "col-span-1",
-        2: "md:col-span-2"
+        2: "md:col-span-2",
+        4: "md:col-span-4"
       };
 
     const openModalForProject = (project: Project) => {
@@ -68,19 +69,21 @@ export default function ProjectsSection() {
                                 </div>
                                 <hr className="opacity-[.10]" />
                                 <div className="flex flex-col justify-center align-center pt-4">
-                                    <a 
+                                    {project.codeSource && (
+                                        <a 
                                         className="text-gray-400 hover:text-gray-200 flex items-center gap-2
                                                     fill-gray-500 hover:fill-white 
                                                     transition-colors duration-300"
                                         href={project.codeSource}
                                         target="_blank"
-                                    >
-                                        <GithubMark width={25} height={50} />
-                                        <span className="text-base">
-                                            Github
-                                        </span>
-                                        
-                                    </a>
+                                        >
+                                            <GithubMark width={25} height={50} />
+                                            <span className="text-base">
+                                                Github
+                                            </span>
+                                        </a>
+                                    )}
+          
                                     {project.demo && (
                                         <a 
                                         className="text-gray-400 hover:text-gray-200 flex items-center gap-2
